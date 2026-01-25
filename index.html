@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Distortion</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Inventory Distortion Checker</h2>
+
+    <form action="/check" method="post">
+        <label>System Stock</label>
+        <input type="number" name="system" required>
+
+        <label>Actual Stock</label>
+        <input type="number" name="actual" required>
+
+        <button type="submit">Check Inventory</button>
+    </form>
+
+    {% if result %}
+        <div class="result {{ status }}">
+            {{ result }}
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
